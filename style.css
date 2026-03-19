@@ -1,0 +1,146 @@
+/* === GLOBAL STYLING === */
+body {
+    font-family: Roboto, Arial, sans-serif;
+    background: #1f1f1f;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* === HEADER === */
+.header {
+    width: 100%;
+    padding: 15px 40px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(32, 33, 36, 1);
+    height: 48px;
+    
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1470px; /* same width on all pages */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.header-left,
+.header-right {
+    display: flex;
+    gap: 20px;
+    
+}
+
+.header-link {
+    color: #e8e8e8;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.header-link:hover {
+    color: #4487f6;
+    text-decoration: underline;
+}
+
+/* === FORM STYLING === */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 760px;
+    padding: 20px;
+    margin-top: 120px; /* space below header */
+}
+
+#input-search-text {
+    width: 100%;
+    max-width: 760px;
+    padding: 15px 20px;
+    font-size: 1rem;
+    color: #e8eaed;
+    background: #303134;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    margin-bottom: 20px;
+    transition: background 0.1s ease-in-out;
+}
+
+#input-image-text {
+    width: 100%;
+    max-width: 600px;
+    padding: 18px 20px;
+    background-color: #505052;
+    border: none;
+    color: white;
+    border-radius: 30px;
+    outline: none;
+    margin-bottom: 20px;
+    transition: background 0.1s ease-in-out;
+}
+
+#input-search-text:hover,  #input-image-text:hover{
+    background: rgb(107, 107, 107);
+}
+
+#input-search-text:focus, #input-image-text:focus {
+    background: #282a29;
+}
+
+#input-search-text::placeholder, #input-image-text::placeholder {
+    color: #aaa;
+}
+
+
+/* Subtext under logo */
+.logo-subtext {
+    box-sizing: border-box;
+    position: relative;
+    top: 40%;
+    left: 80%;
+    color: #4487f6;       
+    font-size: 18px;
+    font-weight: 100;
+    padding: 0;
+}
+
+#image-header-text {
+    margin-top: 50px;
+    margin-bottom: -40px;
+}
+
+
+
+/*. Buttons styling*/
+.buttons {
+    display: flex;
+    gap: 25px;
+}
+
+.buttons input[type="submit"] {
+    background: #303134;
+    color: white;
+    border: 1px solid #303134;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+}
+
+.buttons input[type="submit"]:hover {
+    border: 1px solid gray;
+    color: white;
+    opacity: 0.8;
+}
