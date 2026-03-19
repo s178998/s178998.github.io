@@ -163,14 +163,20 @@ footer {
     width: 100%;
     background-color: #131212;
     color: white;
-    padding: 20px 0;
+    padding: 15px 0;
     margin-top: auto;
+    
+    
 }
 
 .footer-container {
-    width: 100%;
+    overflow-x: hidden;
+    width: 95%;
     display: flex;
     justify-content: space-between; 
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-left: 30px;
 }
 
 .footer-left-links {
@@ -180,11 +186,14 @@ footer {
     padding: 0;
     margin: 0;
     text-decoration: none;
+    font-size: 14px;
     transition: color 0.2s ease-in-out;
 }
-.footer-left-links {
+
+.footer-right-links {
     list-style: none;      
     display: flex;         
+    font-size: 14px;
     gap: 30px;              
     padding: 0;
     margin: 0;
@@ -192,7 +201,9 @@ footer {
     transition: color 0.2s ease-in-out;
 }
 
-
+.footer-container a {
+    text-decoration: none;
+}
 
 .left-link1, .left-link2, .left-link3 , .left-link4  {
     cursor: pointer;
