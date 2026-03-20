@@ -1,11 +1,402 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Search</title>
+
+<style>
+
+/* ================= GLOBAL ================= */
+
+body {
+    font-family: Roboto, Arial, sans-serif;
+    background: #202124;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ================= HEADER ================= */
+
+#advanced-search-header {
+    width: 100%;
+    padding: 35px 40px 35px 10px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    height: 48px;
+    background-color: rgba(2, 0, 0, 0.497);
+}
+
+.advanced-header-container {
+    width: 100%;
+    max-width: 2000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.advanced-header-left,
+.advanced-header-right {
+    display: flex;
+    gap: 20px;
+}
+
+.advanced-header-link {
+    color: #e8e8e8;
+    font-size: 23px;
+    text-decoration: none;
+    margin-left: 11px;
+}
+
+.advanced-header-link-search {
+    color: #e8e8e8;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.advanced-header-link-search:hover {
+    color: #4487f6;
+    text-decoration: underline;
+}
+
+/* ================= TITLE ================= */
+
+.advanced-search-title {
+    margin-top: 100px;
+    margin-left: 50px;
+    color: #f28b82;
+    font-size: 20px;
+}
+
+/* ================= DIVIDER ================= */
+
+.first-horizontal-line {
+    border: none;
+    height: 1px;
+    background-color: #3c4043;
+    width: 100%;
+}
+
+/* ================= FORM ================= */
+
+.form-advanced {
+    margin-top: 20px;
+}
+
+.top-row {
+    display: flex;
+    align-items: center;
+}
+
+.top-row-right {
+    margin-left: 32%;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.find-pages-with-text {
+    color: #e8eaed;
+    margin: 20px 20px 20px 50px;
+}
+
+.to-do-this-in-search-box {
+    color: #e8eaed;
+}
+
+.advanced-search-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 20px 20px 50px;
+    align-items: center;
+}
+
+.label-main {
+    color: #969ba1;
+    font-size: 13px;
+}
+
+.label-small {
+    margin-left: 10px;
+    color: #969ba1;
+    font-size: 11px;
+}
+
+.label-example {
+    font-size: 11px;
+    color: #dadce0;
+    margin-left: 5px;
+    font-family: monospace;
+}
+
+.label-indent {
+    margin-left: 20px;
+}
+
+.advanced-input-text {
+    width: 32%;
+    min-width: 300px;
+    height: 25px;
+    background-color: #1f1f1f;
+    border: 1px solid rgb(79, 79, 79);
+    color: #bdc1c6;
+    padding-left: 10px;
     
+}
+
+.advanced-input-text:focus {
+    border: 1px solid #8ab4f8;
+    outline: none;
+}
+
+/* spacing variations */
+.input-q {margin-left: 69px}
+.input-epq { margin-left: 10px; }
+.input-oq { margin-left: 46px; }
+.input-eq { margin-left: 37px; }
+
+
+/* ================= BUTTON ================= */
+
+.advanced-btn-container {
+    margin-left: 36.2%;
+}
+
+.advanced-btn {
+    background-color: #8ab4f8;
+    border: none;
+    padding: 0 12px;
+    height: 30px;
+    min-width: 120px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+/* ================= HR ================= */
+
+.hr-short {
+    margin-left: 40px;
+    margin-top: 40px;
+    max-width: 60%;
+    min-width: 460px;
+}
+
+.hr-bottom {
+    margin-left: 40px;
+    margin-top: 360px;
+    max-width: 60%;
+    min-width: 460px;
+}
+
+/* ================= YOU CAN ALSO ================= */
+
+.you-can-title {
+    margin-left: 40px;
+    color: #969ba1;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.you-can-also-container li a {
+    text-decoration: none;
+    color: #99c3ff;
+    font-size: 13px;
+    list-style-type: none;
+}
+.you-can-also-container li  {
+    list-style-type: none;
+}
+
+.you-can-also-container a:visited {
+    color: #c58af9;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    margin-top: auto;
+}
+
+.advanced-footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 28px 30px;
+    background-color: #0000006b;
+}
+
+.advanced-footer-left-links {
+    display: flex;
+    gap: 30px;
+    margin-left: 12%;
+}
+
+.advanced-footer-container a {
+    text-decoration: none;
+    color: #bfbfbf;
+    font-size: 14px;
+}
+
+@media (max-width: 760px){
+    .to-do-this-in-search-box{
+        display: none;
+    }
+
+    .label-small {
+        display: none;
+        
+        
+    }
+
+    
+    .input-q {
+       margin-left: 0;
+       display: inline-block;
+       width: 1000px;
+
+    }
+    .input-epq { 
+        margin-left: 0;
+       display: inline-block;
+       width: 1000px;
+    }
+    .input-oq { 
+        margin-left: 0;
+       display: inline-block;
+       width: 1000px;
+     }
+    .input-eq { margin-left: 0;
+       display: inline-block;
+       width: 1000px; }
+
+    .advanced-search-title {
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+    #advanced-search-header {
+        display: none;
+    }
+
+    .find-pages-with-text {
+        margin: -20px 20px 20px 20px;
+    }
+
+    .advanced-search-options {
+        margin-left: 20px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header id="advanced-search-header">
+    <div class="advanced-header-container">
+        <div class="advanced-header-left">
+            <a href="https://google.com" class="advanced-header-link">Google</a>
+        </div>
+        <div class="advanced-header-right">
+            <a href="index.html" class="advanced-header-link-search">back to search</a>
+        </div>
+    </div>
+</header>
+
+<!-- TITLE -->
+<div class="advanced-search-title">
+    <label>Advanced Search</label>
+</div>
+
+<hr class="first-horizontal-line">
+
+<!-- FORM -->
+<form class="form-advanced" method="GET" action="https://google.com/search">
+
+    <div class="top-row">
+        <span class="find-pages-with-text">Find pages with...</span>
+        <span class="top-row-right to-do-this-in-search-box">
+            To do this in the search box
+        </span>
+    </div>
+
+    <!-- ALL WORDS -->
+    <div class="advanced-search-options">
+        <label class="label-main">all these words:</label>
+        <input class="advanced-input-text input-q" name="as_q" type="text">
+        <label class="label-small">
+            Type the important words:
+            <span class="label-example">tricolor rat terrier</span>
+        </label>
+    </div>
+
+    <!-- EXACT -->
+    <div class="advanced-search-options">
+        <label class="label-main">this exact word or phrase:</label>
+        <input class="advanced-input-text input-epq" name="as_epq" type="text">
+        <label class="label-small">
+            Put exact words in quotes:
+            <span class="label-example">"rat terrier"</span>
+        </label>
+    </div>
+
+    <!-- ANY -->
+    <div class="advanced-search-options">
+        <label class="label-main">any of these words:</label>
+        <input class="advanced-input-text input-oq" name="as_oq" type="text">
+        <label class="label-small">
+            Type<span class="label-example">OR </span> between all the words you want:
+            <span class="label-example">miniature OR standard</span>
+        </label>
+    </div>
+
+    <!-- NONE -->
+    <div class="advanced-search-options">
+        <label class="label-main">none of these words:</label>
+        <input class="advanced-input-text input-eq" name="as_eq" type="text">
+        <label class="label-small">
+        put a minus sign just before the words you don't want:
+            <br>
+            <span class="label-example label-indent">
+                -rodent, -"Jack Russell"
+            </span>
+        </label>
+    </div>
+
+    <!-- BUTTON -->
+    <div class="advanced-btn-container">
+        <input class="advanced-btn" value="Advanced Search" type="submit">
+    </div>
+
+    <hr class="first-horizontal-line hr-short">
+    <hr class="first-horizontal-line hr-bottom">
+
+</form>
+
+<!-- YOU CAN ALSO -->
+<h3 class="you-can-title">You can also...</h3>
+
+<ul class="you-can-also-container">
+    <li><a href="https://support.google.com/websearch/answer/54068?hl=en&visit_id=639096335354582333-1073288432&p=adv_pages_visited&rd=1">Search pages you've visited</a></li>
+    <li><a href="https://support.google.com/websearch/answer/2466433?visit_id=639096335354582333-1073288432&p=adv_operators&hl=en&rd=1">Use operators in the search box</a></li>
+    <li><a href="https://www.google.com/preferences?hl=en">Customize your search settings</a></li>
+</ul>
+
+<!-- FOOTER -->
+<footer>
+    <div class="advanced-footer-container">
+        <div class="advanced-footer-left-links">
+            <a href="https://support.google.com/websearch/?visit_id=639096335354582333-1073288432&hl=en&rd=2#topic=3378866">Help</a>
+            <a href="https://policies.google.com/privacy?hl=en&fg=1">Privacy</a>
+            <a href="https://policies.google.com/terms?hl=en&fg=1">Terms</a>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
