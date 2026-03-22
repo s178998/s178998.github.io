@@ -204,6 +204,9 @@ footer {
 
 
 @media (max-width: 760px) {
+    body {
+        overflow-x: hidden;
+    }
     .search-footer-container {
         flex-direction: column;
     }
@@ -215,6 +218,9 @@ footer {
 
 
 @media (max-width: 600px) {
+    body {
+        overflow-x: hidden;
+    }
     .search-form img {
     margin-bottom: 30px;
     margin-top: 10px;
@@ -456,6 +462,9 @@ footer {
 
 
 @media (max-width: 760px) {
+    body {
+        overflow-x: hidden;
+    }
     .image-footer-container {
         flex-direction: column;
     }
@@ -470,6 +479,9 @@ footer {
 
 
 @media (max-width: 600px) {
+    body {
+        overflow-x: hidden;
+    }
     .image-search-form {
     margin-bottom: 30px;
     margin-top: 10px;
