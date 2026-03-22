@@ -134,6 +134,17 @@ body {
     font-family: monospace;
 }
 
+.label-orb {
+    font-size: 11px;
+    color: #dadce0;
+    margin-left: 5px;
+    font-family: monospace;
+}
+
+.label-mos {
+    display: flex;
+}
+
 .label-indent {
     margin-left: 20px;
 }
@@ -241,12 +252,64 @@ footer {
     font-size: 14px;
 }
 
+@media (max-width: 1500px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .advanced-input-text {
+        width: 500px;
+    }
+    .hr-bottom {
+        min-width: 100%;
+    }
+
+    .hr-short {
+        min-width: 100%;
+    }
+
+    .advanced-btn-container {
+    margin-left: 57.9%;
+}
+}
+
+
+@media (max-width: 1024px) {
+     body {
+        overflow-x: hidden;
+    }
+    .label-small {
+        display: none;
+    }
+
+    .to-do-this-in-search-box {
+        display: none;
+    }
+
+    .advanced-input-text {
+        width: 500px;
+    }
+    .hr-bottom {
+        min-width: 940px;
+    }
+
+    .hr-short {
+        min-width: 940px;
+    }
+    .advanced-btn-container {
+    margin-left: 59.9%;
+    }
+    
+}
+
 @media (max-width: 760px){
+
+    
     .to-do-this-in-search-box{
         display: none;
     }
 
-    .label-small {
+    .label-example {
         display: none;
         
         
@@ -288,18 +351,82 @@ footer {
     .advanced-search-options {
         margin-left: 20px;
     }
+    .hr-bottom {
+        min-width: 718px;
+        margin-left: 20px;
+    }
+
+    .hr-short {
+        min-width: 718px;
+        margin-left: 20px;
+    }
+
+     .advanced-btn-container {
+    margin-left: 34.9%;
+}
+
 
 }
 
-@media (max-height: 1024px) {
-    .hr-bottom {
-        margin-top: 160px;
+@media (max-width: 600px){
+    .to-do-this-in-search-box{
+        display: none;
+    }
+
+    .label-example {
+        display: none;
+        
+        
+    }
+
+    
+    .input-q {
+       margin-left: 0;
+       display: inline-block;
+       width: 1000px;
 
     }
+    .input-epq { 
+        margin-left: 0;
+       display: inline-block;
+       width: 1000px;
+    }
+    .input-oq { 
+        margin-left: 0;
+       display: inline-block;
+       width: 1000px;
+     }
+    .input-eq { margin-left: 0;
+       display: inline-block;
+       width: 1000px; }
+
+    .advanced-search-title {
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+    #advanced-search-header {
+        display: none;
+    }
+
+    .find-pages-with-text {
+        margin: -20px 20px 20px 20px;
+    }
+
+    .advanced-search-options {
+        margin-left: 20px;
+    }
+    .hr-bottom {
+        min-width: 480px;
+        margin-left: 20px;
+    }
+
+    .hr-short {
+        min-width: 480px;
+        margin-left: 20px;
+    }
+
+
 }
-
-
-
 
 </style>
 </head>
@@ -321,6 +448,7 @@ footer {
 <!-- TITLE -->
 <div class="advanced-search-title">
     <label>Advanced Search</label>
+    
 </div>
 
 <hr class="first-horizontal-line">
@@ -360,8 +488,8 @@ footer {
         <label class="label-main">any of these words:</label>
         <input class="advanced-input-text input-oq" name="as_oq" type="text">
         <label class="label-small">
-            Type<span class="label-example">OR </span> between all the words you want:
-            <span class="label-example">miniature OR standard</span>
+            Type<span class="label-orb">OR </span> between all the words you want:
+            <span class="label-example label-mos">miniature OR standard</span>
         </label>
     </div>
 
@@ -383,7 +511,6 @@ footer {
         <input class="advanced-btn" value="Advanced Search" type="submit">
     </div>
 
-    
     <hr class="first-horizontal-line hr-short">
     <hr class="first-horizontal-line hr-bottom">
 
